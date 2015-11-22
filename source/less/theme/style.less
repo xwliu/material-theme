@@ -1,0 +1,374 @@
+/**
+ * Description: Main theme file
+ * Last update: 10/05/2015
+ * Author: Mattia Astorino <astorino.design@gmail.com>
+ *
+ * Summary:
+ *
+ *	1. CONFIGURATIONS AND BASIC STYLE
+ *		- 1.1 COLORS AND CONFIGURATIONS
+ *		- 1.2 BASIC STYLE
+ *
+ *	2. HEADLINE INFO AND NAVIGATION
+ *		- 2.1 INFO
+ *		- 2.2 NAVIGATION
+
+ *	3. PANELS
+ *		- 3.1 BEHAVIOR
+ *		- 3.2 STYLE
+ *		- 3.3 ELEMENTS
+ *
+ **/
+
+/* •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+1. CONFIGURATIONS AND BASIC STYLE
+•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• */
+
+
+/* 1.1 COLORS AND CONFIGURATIONS
+========================================================================== */
+
+@color-cta           : #80CBC4;
+@color-primary       : #263238;
+@color-secondary     : #65818B;
+@color-white         : #FFFFFF;
+@tap-highlight-color : @color-cta;
+@font-family         : "Roboto", Tahoma, sans-serif;
+@easing              : cubic-bezier(.55,0,.1,1);
+
+
+/* 1.2 BASIC STYLE
+========================================================================== */
+
+html {
+background-color: @color-white; }
+
+
+body {
+padding: 0;
+position: relative;
+font-family: @font-family;
+-webkit-tap-highlight-color: fade( @tap-highlight-color, 10% );
+background-size: cover;
+background-position: 73% 60%;
+background-repeat: no-repeat;
+animation-duration: 4s;
+animation-fill-mode: both; }
+
+
+.clearfix {
+*zoom: 1;
+
+  &:before {
+  content: " ";
+  display: table; }
+
+  &:after {
+  &:extend( .clearfix:before );
+  clear: both; }
+}
+
+
+::-moz-selection {
+color: @color-secondary;
+text-shadow: none;
+background-color: @color-primary; }
+
+
+::selection {
+color: @color-secondary;
+text-shadow: none;
+background-color: @color-primary; }
+
+
+/* ==========================================================================
+   Common style
+   ========================================================================== */
+
+p {
+color: @color-secondary;
+font-weight: 300;
+font-size: 1rem;
+letter-spacing: 0.8px;
+line-height: 1.5;
+
+  @media screen and @small {
+  font-size: 1.2vw; }
+}
+
+h1 {
+color: @color-primary;
+font-size: 3.4375rem;
+margin-top: 0;
+font-weight: 100; }
+
+h2 {
+color: @color-primary;
+font-size: 3rem;
+margin-top: 0;
+font-weight: 100;
+
+  @media screen and @small {
+  font-size: 4vw; }
+}
+
+
+/* ==========================================================================
+   Specific style
+   ========================================================================== */
+
+
+.section {
+width: 100%;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+overflow: hidden;
+user-select: none;
+min-height: 600px;
+box-sizing: border-box;
+padding: 50px 80px;
+
+  @media screen and @small {
+  padding: 100px 3vw; }
+
+  &.section--herobanner {
+  justify-content: center;
+  color: @color-white;
+  padding: 0;
+  animation: rainbow 60s infinite;
+
+    @media screen and @small {
+    justify-content: space-between; }
+
+    .heading {
+    text-align: center;
+    pointer-events: none;
+    cursor: default;
+    padding: 0 15px; }
+
+    h1 {
+    font-size: 3.375rem;
+    color: @color-white;
+    margin-top: 50px;
+    margin-bottom: 0;
+
+      @media screen and @small {
+      font-size: 4.5rem; }
+    }
+
+    h2 {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-top: 8px;
+    color: @color-white;
+    opacity: 0.6;
+
+      @media screen and @small {
+      font-size: 1.125rem; }
+    }
+  }
+
+  &.section--display {
+  background-size: cover;
+  background-position: center bottom;
+  justify-content: flex-start;
+
+    h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 100px;
+
+      @media screen and @small {
+      font-size: 3.4375rem;
+      margin-top: initial;
+      max-width: 60%; }
+    }
+  }
+
+  &.section--footer {
+  background-color: @color-primary;
+
+
+
+  }
+}
+
+
+.screens {
+display: none;
+
+  @media screen and @small {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 68vh;
+  min-height: 380px;
+
+    .screen {
+    position: absolute;
+    display: block;
+    left: 50%;
+    bottom: 0;
+    max-height: 100%;
+    max-width: 100%;
+    transition: all 300ms @easing;
+    transform: translateX( -50% );
+
+      &:hover {
+      transform: translate( -50%, -3% ); }
+
+      &[src$="1.jpg"]{
+      z-index: 3;
+      bottom: -50px;
+      transform: translateX( -50% ) scale( 0.95 );
+      box-shadow: 0 30px 24px fade( #000, 12% ), 0 -5px 27px -10px fade( #000, 28% );
+
+        &:hover {
+        transform: translate( -50%, -3% ) scale( 0.95 ); }
+      }
+
+      &[src$="2.jpg"]{
+      bottom: -25px;
+      z-index: 2;
+      box-shadow: 0 30px 24px fade( #000, 12% ), 0 -5px 27px fade( #000, 28% ); }
+
+      &[src$="3.jpg"]{
+      z-index: 1;
+      transform: translateX( -50% ) scale( 0.96 );
+      bottom: 15px;
+      opacity: 0.85;
+
+        &:hover {
+        transform: translate( -50%, -3% ) scale( 0.96 ); }
+      }
+    }
+  }
+}
+
+
+.section__content {
+width: 100%;
+
+  @media screen and @small {
+  display: flex;
+  width: 85%;
+  justify-content: space-between; }
+}
+
+
+.section__area {
+
+  &.section__area--figure {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center center;
+  height: 280px;
+  flex-basis: 50%;
+
+      @media screen and @small {
+      height: auto;
+      order: initial;
+      background-position: right center;
+
+        &.section__area--figure-left {
+        background-position: left center; }
+      }
+  }
+
+  p {
+  max-width: 462px; }
+
+}
+
+.header {
+display: none;
+box-sizing: border-box;
+justify-content: center;
+transition: all 400ms @easing;
+padding: 24px 50px;
+overflow: hidden;
+
+  &:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background-color: @color-primary;
+  left: 50%;
+  top: 0;
+  z-index: -1;
+  width: 100px;
+  height: 100px;
+  transition: all 900ms @easing;
+  transform: translate( -50%, -50% ) scale( 0 ); }
+
+  &.banner--clone {
+  position: fixed;
+  display: flex;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0; }
+
+  &.banner--stick {
+  opacity: 1;
+
+    &:before {
+    transform: translate( -50%, -50% ) scale( 50 ) ; }
+  }
+
+  &.banner--unstick {
+  transform: translateY( -20% );
+
+    &:before {
+    transform: translate( -50%, -50% ) scale( 0 ) ; }
+  }
+}
+
+
+.download {
+text-align: center;
+
+  a {
+  display: block;
+  text-decoration: none; }
+
+  h2 {
+  color: @color-white;
+  margin-top: 42px;
+  margin-bottom: 10px; }
+
+  small {
+  color: @color-secondary;
+
+    a {
+    color: @color-secondary;
+    text-decoration: underline;
+    display: inline;
+    transition: all 200ms;
+
+      &:hover {
+      color: @color-cta; }
+    }
+  }
+
+}
+
+/* ==========================================================================
+   Custom animations
+   ========================================================================== */
+
+
+@keyframes rainbow {
+  0% { background-color: #8BC34A; }
+  16% { background-color: #80CBC4; }
+  32% { background-color: #FF7042; }
+  48% { background-color: #9C27B0; }
+  64% { background-color: #E57373; }
+  100% { background-color: #8BC34A; }
+}
+

@@ -1,0 +1,47 @@
+//
+//  Mattia Astorino
+//  Developed with love by Mattia Astorino
+//  https://github.com/equinusocio/personal-site
+//
+//  Licensed under the MIT License
+//  http://opensource.org/licenses/MIT
+//  ————————————————————————————————————————————————————————————————————————————————————————————————
+
+//  # SETTINGS
+//  # settings.less
+
+
+// Responsive settings
+// •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+   // Major breackpoints
+   @extra-small-start:        30em;       //   480px
+   @small-start:              48em;       //   768px
+   @medium-start:             60em;       //   960px
+   @large-start:              80em;       //   1300px
+   @extra-large-start:        100em;      //   1600px
+
+   // @media css shortcuts    (* = Suggested)
+   @extra-small:              ~"(min-width: @{extra-small-start})";
+   @small:                    ~"(min-width: @{small-start})";           // *
+   @medium:                   ~"(min-width: @{medium-start})";          // *
+   @large:                    ~"(min-width: @{large-start})";
+   @extra-large:              ~"(min-width: @{extra-large-start})";     // *
+   @portrait:                 ~"(orientation: portrait)";
+   @landscape:                ~"(orientation: landscape)";
+
+   @1x:                       ~"96dpi";
+   @15x:                      ~"144dpi";
+   @2x:                       ~"192dpi";
+   @3x:                       ~"288dpi";
+
+   @retina1x:                 ~"(min-resolution: @{1x})";
+   @retina15x:                ~"(min-resolution: @{15x})";
+   @retina2x:                 ~"(min-resolution: @{2x})";
+   @retina3x:                 ~"(min-resolution: @{3x})";
+
+// Layout settings
+// •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+   @base-grid-columns:        12;
+   @base-grid-gutter:         15px;

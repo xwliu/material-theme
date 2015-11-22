@@ -1,0 +1,46 @@
+doctype html
+html(lang="it")
+  head
+    //- Metatags
+    include includes/_metatags.jade
+
+    //- Library and settings
+    link( rel="stylesheet", type='text/css', href="https://fonts.googleapis.com/css?family=Roboto:400,300,100" )
+    link( rel="stylesheet", type='text/css', href="/css/theme.min.css" )
+
+  body.fadeIn
+    //- Include herobanner
+    include includes/_herobanner.jade
+
+    main#main-content
+      //- Include header
+      //- include includes/_header.jade
+
+      //- Include slider 1
+      include includes/_slide-1.jade
+
+      //- Include slider 2
+      include includes/_slide-2.jade
+
+      //- Include slider 3
+      include includes/_slide-3.jade
+
+    //- Include footer
+    include includes/_footer.jade
+
+  //- script( type="text/javascript" src='/js/headhesive.min.js' )
+  //- script( type='text/javascript' ).
+  //-   // Set options
+  //-   var options = {
+  //-       offset: 150,
+  //-       offsetSide: 'top',
+  //-       classes: {
+  //-           clone:   'banner--clone',
+  //-           stick:   'banner--stick',
+  //-           unstick: 'banner--unstick'
+  //-       }
+  //-   };
+    // Initialise with options
+    var banner = new Headhesive( '.header', options );
+    // Headhesive destroy
+    // banner.destroy();
