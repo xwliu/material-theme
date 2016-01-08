@@ -108,7 +108,6 @@ font-weight: 100;
 
 .section {
 width: 100%;
-height: 100vh;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -117,9 +116,10 @@ overflow: hidden;
 user-select: none;
 min-height: 600px;
 box-sizing: border-box;
-padding: 50px 80px;
+padding: 50px 40px;
 
   @media screen and @small {
+  height: 100vh;
   padding: 100px 3vw; }
 
   &.section--herobanner {
@@ -138,7 +138,7 @@ padding: 50px 80px;
     padding: 0 15px; }
 
     h1 {
-    font-size: 5vw;
+    font-size: 11vw;
     color: @color-white;
     margin-top: 50px;
     margin-bottom: 0;
@@ -268,7 +268,10 @@ width: 100%;
   }
 
   p {
-  max-width: 30vw; }
+
+    @media screen and @small {
+    max-width: 30vw; }
+  }
 
 }
 
