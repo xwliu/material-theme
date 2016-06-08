@@ -354,7 +354,7 @@
 
   {
     "class": "tab_label",
-    "fg": [84, 110, 122, 255],
+    "fg": [249, 38, 114, 255],
     "shadow_color": [255, 255, 255, 0],
     "shadow_offset": [0, 0],
     "font.size": 11,
@@ -367,7 +367,7 @@
   {
     "class": "tab_label",
     "parents": [{"class": "tab_control", "attributes": ["selected"]}],
-    "fg": [255, 255, 255, 255],
+    "fg": [0, 255, 0, 255],
     "shadow_color": [255, 255, 255, 0],
     "shadow_offset": [0, 0]
   },
