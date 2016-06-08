@@ -211,6 +211,7 @@ Check the video review by **LevelUpTuts**
 	"material_theme_small_tab": true,
 	"material_theme_tabs_autowidth": true,
 	"material_theme_tree_headings": true,
-	"theme": "Material-Theme.sublime-theme"
+	"theme": "Material-Theme.sublime-theme",
+	"preview_on_click": false,
 }
 单击原标签页打开文件，双击新标签页打开文件。
